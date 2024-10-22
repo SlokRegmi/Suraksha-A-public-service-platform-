@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+:root {
+  /* Light mode variables */
+  --background-color: #f7f8fa; /* A very soft, off-white background */
+  --text-color: #1a1a1a;       /* Dark gray text for better readability */
+  --border-color: #e1e4e8;     /* Light gray for borders */
+  --accent-color: #008170;     /* Soft blue for accent elements */
+}
+
+.dark {
+  /* Dark mode variables adjusted to the new color palette */
+  --background-color: #0F0F0F; /* Very dark gray as the primary background color */
+  --text-color: #f5f5f5;       /* Light gray for primary text, providing high contrast */
+  --border-color: #232D3F;     /* Medium dark gray for borders and less prominent UI elements */
+  --accent-color: #008170;     /* Vibrant teal for accent elements like buttons, links, etc. */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+.glow {
+  box-shadow: 0 0 8px rgba(0, 150, 255, 0.5), /* Inner blue glow */
+              0 0 20px rgba(0, 150, 255, 0.2); /* Outer blue glow */
+}
