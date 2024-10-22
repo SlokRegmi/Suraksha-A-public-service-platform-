@@ -33,8 +33,12 @@ export default function Home() {
       >
         {/* Hero section with distinct background colors */}
           {/* Conditionally render the Skeleton or the actual content based on the loading state */}
-          gand
-          {loading ? (
+          <div
+          className={`flex items-center w-full h-[40%] rounded-2xl pl-16 ${theme === 'dark'
+            ? 'bg-[#008170] text-[#f5f5f5]' // Dark mode: Darker gray background with light text
+            : 'bg-gray-600 text-[#1a1a1a]' // Light mode: Very light gray background with dark text
+            }`}
+        >          {loading ? (
             // Display skeleton placeholders during loading
             <div className="w-full h-full flex flex-col space-y-5 justify-center ">
             <Skeleton className="h-12 w-64 rounded-md" /> {/* Skeleton for the title */}
