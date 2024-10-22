@@ -10,12 +10,12 @@ import {
 import { z } from 'zod';
 import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from '@/components/ui/switch';
-import { Label } from '@radix-ui/react-dropdown-menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 // Zod validation schema
 const reportschema = z.object({
@@ -83,15 +83,15 @@ export default function Report() {
                     {/* Change background color based on emergency switch */}
                     <Card style={{ backgroundColor: isEmergency ? '#ff4d4d' : '#777E8B' }}>
                         <div className=" flex w-full">
-                            <div className='flex w-[60%] space-y-4'>
+                            <div className='flex w-[60%]'>
                                 <form onSubmit={form.handleSubmit(onSubmit)}>
                                     {/* Personal Information Fields */}
                                     <fieldset className="pt-16 w-[60%] px-24">
-                                        <div className="flex justify-between mb-4">
+                                        <div className="flex justify-between mb-4 w-full">
                                             {/* First Name */}
-                                            <div className="flex flex-col w-1/2 pr-2">
-                                                <label htmlFor="fname">First Name</label>
-                                                <Input {...form.register('fname')} />
+                                            <div className="pr-2 grid w-full max-w-sm items-center gap-1.5">
+                                                <Label htmlFor="email">First Name</Label>
+                                                <Input type="email" id="email" placeholder="First Name" />
                                                 {form.formState.errors.fname && (
                                                     <p className="text-red-500">
                                                         {form.formState.errors.fname.message}
@@ -99,9 +99,9 @@ export default function Report() {
                                                 )}
                                             </div>
                                             {/* Last Name */}
-                                            <div className="flex flex-col w-1/2 pl-2">
-                                                <label htmlFor="lname">Last Name</label>
-                                                <Input {...form.register('lname')} />
+                                            <div className="grid max-w-sm w-full items-center gap-1.5">
+                                            <Label htmlFor="email">Last Name</Label>
+                                                <Input type="email" id="email" placeholder="Last Name" />
                                                 {form.formState.errors.lname && (
                                                     <p className="text-red-500">
                                                         {form.formState.errors.lname.message}

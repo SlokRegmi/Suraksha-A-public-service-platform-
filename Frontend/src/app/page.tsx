@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Categories } from '@/components/index/categories';
 import { OrbitingCirclesPublic } from '@/components/index/orbitingcircles';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Input } from '@/components/ui/input';
 
 export default function Home() {
   const { theme } = useTheme(); // Get current theme
